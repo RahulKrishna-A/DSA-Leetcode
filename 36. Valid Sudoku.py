@@ -18,16 +18,16 @@ class Solution(object):
         for i in range(9):
             if arr[r][i] != "." and i != c and arr[r][i] == value:
                 return False
-        for j in arr:
-            if j[r] == "." and j != r and j[r] == value:
-                return True
+        for j in range(8):
+            if arr[j][c] != "." and j != r and arr[j][c] == value:
+                return False
         row_start = r - r % 3
         col_start = c - c % 3
         for ro in range(row_start, row_start + 3):
             for co in range(col_start, col_start + 3):
                 if ro == r and co == c:
                     continue
-                if arr[ro][co] == value:
+                if arr[ro][co] != "." and arr[ro][co] == value:
                     return False
         return True
 
