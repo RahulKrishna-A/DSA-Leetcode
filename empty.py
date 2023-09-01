@@ -1,6 +1,5 @@
 a = {
-    "1":25,
-    "2":50
+    "1":[2,3,4],
+    "2":[1,2,3]
 }
-for i in a:
-    print(a[i])
+print(list(a.values()))
